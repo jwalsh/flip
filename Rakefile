@@ -9,3 +9,7 @@ task :spec do
   command = "bundle exec rspec --color --format documentation spec/*_spec.rb"
   system(command) || raise("specs returned non-zero code")
 end
+
+task :console do
+  exec "irb -r flip -I ./lib"
+end

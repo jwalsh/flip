@@ -3,6 +3,10 @@ module Flip
 
     def index
       @p = FeaturesPresenter.new(FeatureSet.instance)
+      respond_to do |format|
+        format.html
+        format.json { render json: @p }
+      end
     end
 
     class FeaturesPresenter
